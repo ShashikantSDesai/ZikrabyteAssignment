@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Center vertically in the viewport */
+        }
+
+        .container {
+            color: #fff; /* White text color */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 50px;
+            position: relative;
+        }
+
+        h2, p {
+            color: #8b4513; /* Brown text color */
+            text-align:start;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #8b4513; /* Brown border color */
+            border-radius: 5px;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        input[type="text"]::placeholder,
+        input[type="password"]::placeholder {
+            color: #8b4513; /* Brown placeholder text color */
+            text-align: left;
+            
+        }
+
+        button {
+            background-color: #8b4513; /* Brown background color */
+            color: #fff; /* White text color */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            float: left; /* Align the button to the left */
+        }
+
+        .new-user {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .signup-link {
+            color: #8b4513; /* Brown color for Sign Up link */
+            text-decoration: none;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-top: 30px;
+            margin-left: 100px;
+        }
+
+        .forgot-password a {
+            color: #8b4513; /* Brown color for Forgot Password link */
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome Back!</h2>
+        <p>Login to continue</p>
+        <form id="loginForm" onsubmit="return validateForm()">
+            <div class="form-group">
+                <input type="text" id="employee_id" name="employee_id" placeholder="&#128100; Employee ID" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="&#128272; Enter Password" required>
+            </div>
+            <button type="submit">Login</button>
+            <div class="forgot-password">
+                <a href="forget_password.html">&#128274; Forget Password?</a>
+            </div>
+        </form>
+    </div>
+    <div class="new-user">
+        <a href="signup.html" class="signup-link">&#128100; New User? Sign Up</a>
+    </div>
+
+    </body>
+</html>

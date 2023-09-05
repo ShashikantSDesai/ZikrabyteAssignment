@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shipping & Checkout</title>
+    <!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0-beta3-solid/css/all.min.css">
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style for the header */
+        header {
+            color: brown; /* Change text color to brown */
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Style for the navigation menu */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: brown; /* Change link text color to brown */
+            text-decoration: none;
+            margin: 0 20px 0 20px;
+        }
+
+        /* Style for the search bar */
+        .search-bar {
+            text-align: center;
+        }
+
+        input[type="search"] {
+            border: none;
+            background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 10px center;
+            background-color: white;
+            background-size: 20px;
+            padding: 7px 30px 7px 40px;
+            font-size: 14px;
+            color: brown; /* Change text color to brown */
+            border: 1px solid brown; /* Change border color to brown */
+            border-radius: 20px;
+            outline: none;
+            align-items: end;
+        }
+
+        input[type="search"]::placeholder {
+            color: #bbb;
+        }
+
+        /* Style for the basket icon */
+        .basket-icon {
+            margin-left: 20px;
+        }
+
+        /* Style for the user symbol */
+        .user-symbol {
+            margin-left: 20px;
+            font-size: 24px;
+            color: brown; /* Change symbol color to brown */
+        }
+
+        /* Style for the content box */
+        .content-box {
+            background-color: brown;
+            padding: 2px; 
+            margin: 2px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            text-align: center;
+            color: bisque;
+        }
+
+        .images1 {
+            background-color: white;
+            padding: 20px; 
+            margin: 20px; 
+        }
+
+        .images2 {
+            padding: 20px; 
+            margin: 20px; 
+        }
+
+        .images3 {
+            background-color: white;
+            padding: 200px 200px 200px 200px; 
+            margin: 20px; 
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="Orkla_Logo.svg.png" height="50px" width="100px">
+        </div>
+        <nav>
+            <div class="search-bar">
+                <input type="search" placeholder="Search...">
+            </div>
+            <a href="#">HOME</a>
+            <a href="#">PRODUCTS</a>
+            <a href="#">OFFERS</a>
+            <a href="#">CONTACT US</a>
+            <i class="fas fa-user user-symbol"></i> <!-- Font Awesome user symbol -->
+            <img src="icon-basket.jpg" class="basket-icon" height="40px" width="60px">
+        </nav>
+    </header>
+    <div class="content-box">
+        <p>Exclusive merchandise shop for Orkla India, MTR Foods, and Eastern Condiments Employees</p>
+    </div>
+    <div class="images">
+        <div class="images1">
+            <img src="Eastern.jpg" class="basket-icon" height="200px" width="250px">
+
+            <img src="MTR_Foods_Logo.svg.png" class="basket-icon" height="300px" width="300px">
+        </div>
+        <div class="images2">
+            <img src="T-shirt.png" class="basket-icon" height="300px" width="300px">
+        </div>
+        <div class="images3">
+            <div>
+            <b>Swiss Military Polyester 46 cms Black</b>
+            <b>Laptop Backpack and Combo Packs</b>
+            <p>Brand-Swiss Military</p>
+            <button>Deal of the day</button> 
+        </div>
+            <img src="bag.jpg" class="basket-icon" height="200px" width="200px">
+        </div>
+    </div>
+
+</body>
+
+</html>

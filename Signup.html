@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Sign-up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .login-link {
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-link .already-user {
+            color: #b08954; /* Light brown color for "Already a user?" */
+        }
+
+        .login-link .login-text {
+            color: #8b572a; /* Dark brown color for "Login" */
+        }
+
+        .Sign-up {
+            color: brown;
+            text-align: center;
+        }
+
+        .login-container {
+            text-align: right;
+            margin-left: 400px;
+            margin-right: 10px;
+        }
+
+        form {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .form-group {
+            flex: 0 1 calc(50% - 50px);
+            margin-bottom: 30px;
+            margin-right: 30px;
+            margin-left: 20px;
+            color: brown;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group.text-center {
+            text-align: center;
+            flex: 1 1 100%;
+        }
+
+        input[type="submit"] {
+            background-color: brown;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="login-container">       
+            <a class="login-link" href="login.html"><span class="already-user">Already a user?</span> <span class="login-text">Login</span></a>
+        </div>
+    </div>
+
+    <div class="Sign-up">
+        <h1>Sign-up</h1>
+        <p>Glade to see you!</p>
+    </div>
+    <form>
+        <div class="form-group">
+            <label for="full_name">Full Name:</label>
+            <input type="text" id="full_name" name="full_name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="employee_designation">Employee Designation:</label>
+            <input type="text" id="employee_designation" name="employee_designation" required>
+        </div>
+
+        <div class="form-group">
+            <label for="employee_id">Employee ID:</label>
+            <input type="text" id="employee_id" name="employee_id" required>
+        </div>
+
+        <div class="form-group">
+            <label for="employee_branch_id">Employee Branch ID:</label>
+            <input type="text" id="employee_branch_id" name="employee_branch_id" required>
+        </div>
+
+        <div class="form-group">
+            <label for="employee_branch">Employee Branch:</label>
+            <input type="text" id="employee_branch" name="employee_branch" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mail_id">Mail ID:</label>
+            <input type="email" id="mail_id" name="mail_id" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+        </div>
+
+        <div class="form-group text-center">
+            <input type="submit" value="Sign Up">
+        </div>
+    </form>
+</body>
+</html>

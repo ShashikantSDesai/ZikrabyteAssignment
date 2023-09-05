@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shipping & Checkout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Add additional CSS styles as needed for your specific design */
+
+    </style>
+</head>
+<body>
+    <h1>Shipping & Checkout</h1>
+    <div>
+            <button type="submit" id="add-to-cart">Add to Cart</button>
+            <button type="submit">Shipping & Checkout</button>
+        </div>
+    <form id="checkout-form" action="process_order.php" method="POST">
+        <!-- Billing Details -->
+        <h2>Billing Details</h2>
+        <div>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first_name" >
+        </div>
+        <div>
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last_name">
+        </div>
+        <div>
+            <label for="company-name">Company Name (Optional)</label>
+            <input type="text" id="company-name" name="company_name">
+        </div>
+        <div>
+            <label for="country-region">Country/Region *</label>
+            <input type="text" id="country-region" name="country_region" placeholder="India" required>
+        </div>
+        <div>
+            <label for="street-address">Street Address *</label>
+            <input type="text" id="street-address" name="street_address" placeholder="House number and street name" required>
+        </div>
+        <div>
+            <input type="text" id="apartment-suite" name="apartment_suite" placeholder="Apartment, Suite, etc. (optional)">
+        </div>
+        <div>
+            <label for="town-city">Town/City</label>
+            <input type="text" id="town-city" name="town_city">
+        </div>
+        <div>
+            <label for="state">State *</label>
+            <input type="text" id="state" name="state" placeholder="Delhi" required>
+        </div>
+        <div>
+            <label for="zip">ZIP *</label>
+            <input type="text" id="zip" name="zip" required>
+        </div>
+
+        <!-- Shipping Method -->
+        <h2>Shipping Method</h2>
+        <div>
+            <label for="shipping-method">Choose Shipping Method</label>
+            <select id="shipping-method" name="shipping_method">
+                <option value="standard">Standard Shipping</option>
+                <option value="express">Express Shipping</option>
+                <!-- Add more shipping options as needed -->
+            </select>
+        </div>
+
+        <!-- Payment Information -->
+        <h2>Payment Information</h2>
+        <div>
+            <label for="credit-card">Credit Card Number *</label>
+            <input type="text" id="credit-card" name="credit_card" required>
+        </div>
+        <!-- Add other payment information fields as needed -->
+
+        <!-- Order Summary -->
+        <h2>Order Summary</h2>
+        <div>
+            <!-- Display the user's selected products and order total here -->
+            <!-- For example, you can use JavaScript to dynamically populate this section -->
+            <!-- You can also calculate the order total based on the selected products and shipping method -->
+            <p>Total: <span id="order-total">$0.00</span></p>
+        </div>
+
+        <!-- Multi-Word Placeholder Textbox -->
+        <div>
+            <label for="multi-word-placeholder">Multi-Word Placeholder:</label>
+            <input type="text" id="multi-word-placeholder" name="multi_word_placeholder" placeholder="This is a multi-word placeholder...">
+        </div>
+
+        <button type="submit">Place Order</button>
+    </form>
+
+    <!-- You may also want to include JavaScript code to calculate the order total and update the order summary in real-time -->
+    <script>
+        // Sample JavaScript code to calculate and update the order summary
+        // You can use AJAX to fetch product details and calculate the total
+        // This is a simplified example for illustration purposes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sample product prices
+            const productPrices = {
+                'product1': 50,
+                'product2': 30,
+                // Add more product prices as needed
+            };
+
+            // Sample function to calculate order total
+            function calculateOrderTotal() {
+                const selectedProducts = document.querySelectorAll('input[name="selected_products"]:checked');
+                let total = 0;
+
+                selectedProducts.forEach(product => {
+                    total += productPrices[product.value] || 0;
+                });
+
+                // Add shipping cost based on the selected shipping method
+                const shippingMethod = document.getElementById('shipping-method').value;
+                if (shippingMethod === 'express') {
+                    total += 10; // Express shipping cost
+                } else {
+                    total += 5; // Standard shipping cost
+                }
+
+                // Update the order total display
+                document.getElementById('order-total').textContent = `$${total.toFixed(2)}`;
+            }
+
+            // Attach event listeners for product selection and shipping method change
+            const productCheckboxes = document.querySelectorAll('input[name="selected_products"]');
+            productCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', calculateOrderTotal);
+            });
+
+            const shippingMethodSelect = document.getElementById('shipping-method');
+            shippingMethodSelect.addEventListener('change', calculateOrderTotal);
+
+            // Initialize order total calculation
+            calculateOrderTotal();
+        });
+    </script>
+</body>
+</html>
